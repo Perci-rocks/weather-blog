@@ -26,6 +26,13 @@ const Navbar = () => {
               Logout
             </Link>
           </span>
+
+          <span className="write">
+            <Link className="CProfile" to="/Profile">
+              Profile
+            </Link>
+          </span>
+        
         
           
           <span className="write">

@@ -27,6 +27,12 @@
     font-weight: 400;
 }
 
+.CProfile{
+  font-size: 30px;
+  color: black;
+  font-weight: 400;
+}
+
 
       .heading { 
         background-image: linear-gradient(135deg, #fc4a1a, #f7b733);

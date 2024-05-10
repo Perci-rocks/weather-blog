@@ -5,8 +5,8 @@
     margin-bottom: 0px auto;
     border-radius: 10px;
    
-   background-image: url('../Assets/sunset.jpg');
-   background-size: cover;
+  /* background-image: url('../Assets/sunset.jpg');
+   background-size: cover;*/
   
     box-shadow: rgba(0, 0, 0, 4); /* Adjust the shadow color and opacity */
   filter: brightness
@@ -37,14 +37,14 @@
     margin:5px;
     max-width: 550px;
     letter-spacing: 2px; 
-    color: white;
+    color: grey;
   }
   
   input[type="text"],
   input[type="number"],
   input[type="checkbox"],
   button {
-    margin-bottom: 10px;
+    margin: 20px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
