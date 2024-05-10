@@ -1,0 +1,92 @@
+/* auth.css */
+
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 90px;
+  border-radius: 10px;
+  background-color: lightblue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.welcome-heading {
+  background-image: linear-gradient(135deg, #10b5de, #ce15df);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: teal;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: grey;
+  color: #fff;
+}
+
+.button:hover {
+  opacity: 0.9;
+  background-color: #45a049;
+}
+
+.button-google {
+  background-color: teal;
+}
+
+.button-google:hover {
+  background-color: teal;
+}
+
+.button-github {
+  background-color: black;
+}
+
+.button-github:hover {
+  background-color: #222;
+}
+
+.button-logout {
+  background-color: #ff6666;
+  color: #fff;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: red;
+  font-size: 14px;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
