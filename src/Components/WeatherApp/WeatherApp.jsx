@@ -1,10 +1,9 @@
 import React from 'react'
 import './WeatherApp.css'
-import { Link } from "react-router-dom";
+
 import weather from "../Assets/weather.png";
 import humidity from "../Assets/humidity.png";
 import wind from "../Assets/wind.png";
-import search from "../Assets/search.png";
 
  const WeatherApp = () => {
 
@@ -32,13 +31,8 @@ const element =document.getElementsByClassName("city")
 }
 
   return (
-    <div className='Weathercontainer'>
-        
-            <Link className="Back" to="/Home">
-              Back
-            </Link>
-          
-        <div className="Weathertop-bar">
+    <div className='Wcontainer'>
+        <div className="top-bar">
             <input type="text" className="city" placeholder='Enter City Name' />
             <div className="search" onClick={()=>{search()}}>
                 <img src={search} alt="" />

@@ -1,49 +1,66 @@
-// Signup.js
-
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../config/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import "./Signup.css";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Signup = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const navigate = useNavigate(); // Hook for navigation
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  let navigate = useNavigate();
 
-    
-    const signUp = async () => {
-        try {
-            // Create user with email and password
-            await createUserWithEmailAndPassword(auth, email, password);
-            navigate("/Home"); 
-          
-        } catch (error) {
-            // Handle any errors during sign-up
-            console.error("Error signing up:", error.message);
-        }
-    };
+  const handleSignup = async () => {
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      updateProfile(auth.currentUser, { displayName: name });
+      navigate("/");
+    } catch (error) {
+      toast(error.code, { type: "error" });
+    }
+  };
+  return (
+    <div className="border p-3 bg-light " style={{ marginTop: 70 }}>
+      <h1>Register</h1>
+      <div className="form-group">
+        <label>Name</label>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Enter your name"
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+      </div>
+      <div className="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          className="form-control"
+          placeholder="Enter your email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+      </div>
 
-    return (
-        <div className="signup-container">
-            <h1>Sign Up</h1>
-            <input
-                className="input-field"
-                placeholder="Email..."
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-                className="input-field"
-                placeholder="Password..."
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button className="signup-button" onClick={signUp}>Sign Up</button>
-        </div>
-    );
-};
-
+      <div className="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          className="form-control"
+          placeholder="Password"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+      </div>
+      <br />
+      <button className="btn btn-primary" onClick={handleSignup}>
+        Register
+      </button>
+    </div>
+  );
+}
 export default Signup;
